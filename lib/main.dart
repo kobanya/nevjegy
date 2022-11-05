@@ -1,11 +1,23 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
-  home: nevjegy()
+void main() => runApp( MaterialApp(
+  home: nevjegy(),
 ));
 
-class nevjegy extends StatelessWidget {
-  const nevjegy ({Key? key}) : super(key: key);
+class nevjegy extends StatefulWidget {
+   nevjegy ({Key? key}) : super(key: key);
+
+  int szamlalo = 0;
+
+  @override
+  State<nevjegy> createState() => _nevjegyState();
+}
+
+class _nevjegyState extends State<nevjegy> {
+    int szamlalo = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +27,16 @@ class nevjegy extends StatelessWidget {
         title: const Text ('Névjegyem'),
         centerTitle: true,
         backgroundColor: Colors.green[900],
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              szamlalo += 1;
+            });
+          },
+        backgroundColor: Colors.amber[600],
+       child: const Icon(Icons.add) ,
+
       ),
     body: Padding(
       padding:  const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -53,8 +75,8 @@ class nevjegy extends StatelessWidget {
             letterSpacing: 2.0,
         ),
         ),
-        const Text('8',
-            style: TextStyle(
+        Text('$szamlalo',
+            style: const TextStyle(
             color: Colors.black,
             letterSpacing: 3.0,
             fontWeight:  FontWeight.bold,
