@@ -5,7 +5,7 @@ void main() => runApp(const MaterialApp(
 ));
 
 class nevjegy extends StatelessWidget {
-  const nevjegy({Key? key}) : super(key: key);
+  const nevjegy ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,28 +17,28 @@ class nevjegy extends StatelessWidget {
         backgroundColor: Colors.green[900],
       ),
     body: Padding(
-      padding:  EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+      padding:  const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:  <Widget>[
-           Center(
+           const Center(
              child: CircleAvatar(
               backgroundImage: AssetImage('assets/dino.png'),
               radius: 70.0,
           ),
            ),
-          Divider(
+          const Divider(
             height: 90.0,
           ),
-          Text('NÉV',
+          const Text('NÉV',
             style: TextStyle(
               color: Colors.black45,
               letterSpacing: 2.0,
             ),
           ),
           // Üres tér beillesztése a két névelem közé
-        SizedBox(height: 10.0),
-        Text('Díno Nínó a dinoszaurusz',
+        const SizedBox(height: 10.0),
+        const Text('Díno Nínó a dinoszaurusz',
             style: TextStyle(
             color: Colors.black,
             letterSpacing: 3.0,
@@ -46,14 +46,14 @@ class nevjegy extends StatelessWidget {
             fontSize: 28.0,
           ),
         ),
-        SizedBox(height: 30.0),
-        Text('Helyezésem',
+        const SizedBox(height: 30.0),
+        const Text('Helyezésem',
             style: TextStyle(
             color: Colors.black45,
             letterSpacing: 2.0,
         ),
         ),
-        Text('8',
+        const Text('8',
             style: TextStyle(
             color: Colors.black,
             letterSpacing: 3.0,
@@ -61,13 +61,13 @@ class nevjegy extends StatelessWidget {
             fontSize: 28.0,
             ),
             ),
-          SizedBox(height: 50.0),
+          const SizedBox(height: 50.0),
           Row (
-           children: <Widget>[
+           children: const <Widget>[
               Icon(
                 Icons.email,
                 color: Colors.grey,
-          ),
+              ),
 
 
            SizedBox(width: 5.0),
@@ -84,9 +84,6 @@ class nevjegy extends StatelessWidget {
     ],
     ),
     ),
-
-
-
     );
   }
 }
